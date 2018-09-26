@@ -1,6 +1,6 @@
 FROM gliderlabs/alpine
 
-MAINTAINER Roi Rav-Hon <roi@logz.io>
+MAINTAINER Tiago Lopo <tlopo@ghithub.com>
 
 # Installs bash and python
 RUN apk --update add bash python py-pip

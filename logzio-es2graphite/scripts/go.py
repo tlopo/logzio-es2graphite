@@ -76,7 +76,7 @@ if graphite_protocol not in ['pickle', 'plaintext']:
 
 # Query the cluster root once, to get the cluster name
 clusterRoot = requests.get("{0}://{1}:{2}/".format(elasticsearch_protocol, elasticsearchAddr, elasticsearch_port),
-                           auth=(elasticsearch_user_name, elasticsearch_password)).json()
+                           auth=(elasticsearch_user_name, elasticsearch_password), verify=False ).json()
 clusterName = clusterRoot["cluster_name"]
 
 
@@ -147,7 +147,7 @@ while True:
 
     # Getting nodes JVM usage
     nodesJson = requests.get("{0}://{1}:{2}/_nodes/stats".format(elasticsearch_protocol, elasticsearchAddr, elasticsearch_port),
-                             auth=(elasticsearch_user_name, elasticsearch_password)).json()
+                             auth=(elasticsearch_user_name, elasticsearch_password), verify=False).json()
 
     # Iterate over the nodes
     for currNode in nodesJson["nodes"]:

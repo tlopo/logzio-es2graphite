@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TAG=logzio/es2graphite
+TAG=tlopo/es2graphite
 
-docker build -t $TAG ./
+sudo docker build -t $TAG ./
 
 echo "----------------------------------------"
 echo "Built: $TAG"
